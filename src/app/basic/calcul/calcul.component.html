@@ -1,0 +1,17 @@
+<p>calcul works!</p>
+x:<input type="text"[(ngModel)]="x"/> <br/>
+n:<input type="text"[(ngModel)]="n"  (keyup)="calculer()" /> <br/>
+<!--  attention, piege:[(ngModel)] ne fonctionne que si FormsModule est techniquement ajouté dans app.module.ts-->
+
+<input type="button" value="calculer x puissance n"
+        (click)="calculer()"/> <br/>
+        <div *ngIf="res">
+        resultat =  <span [class.enGrasSiGrandValeur]="res>=100">{{res}}</span>
+       </div>
+       <input type="checkbox" [(ngModel)]="detail" /> avec detail <br/>
+       <ul [style.display]="detail?'block':'none'">
+         <li *ngFor="let resultat of tabRes">{{resultat}}</li>
+ 
+       </ul>
+
+       <p>********</p>
